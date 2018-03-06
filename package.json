@@ -1,0 +1,28 @@
+{
+  "name": "seamlab-solutions-nwdi-website",
+  "version": "1.0.0",
+  "description": "Seamlab Solutions: Website for New World Diagnostics, Inc",
+  "main": "express.js",
+  "scripts": {
+    "test": "node express.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seamlab-solutions/nwdi-website.git"
+  },
+  "keywords": [
+    "seamlab",
+    "solutions",
+    "nwdi",
+    "website"
+  ],
+  "author": "Roudinee B. Panteria <rbpanteria.seamlab@gmail.com> (http://seamlab-solutions.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seamlab-solutions/nwdi-website/issues"
+  },
+  "homepage": "https://github.com/seamlab-solutions/nwdi-website#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
