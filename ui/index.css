@@ -66,22 +66,38 @@ nav ul li:hover a {
     border-top: 3px solid #0364d9 !important;
 }
 
-.home .tagline {
+/*.home .tagline {
     background: url(images/tagline.png) no-repeat;
-    background-size: 100% 100%;
+    width:100%;
     height: 125px;
+}
+*/
+
+.package-item {
+	font-size:13px;
+	
+}
+
+.package .text-danger {
+	margin-bottom:0px;
+	
 }
 
 .about-us .vision, .about-us  .mission, .about-us .core-values, .about-us .quality-policy {
     height: 50px;
+	margin-top:1rem;
 }
 
-.about-us  .vision, .about-us  .mission {
-    width: 150px;
+.about-us .row p, .about-us .row li {
+    font-size:13px;
 }
 
-.about-us .core-values, .about-us .quality-policy {
-    width: 230px;
+.about-us .row b {
+    font-size:13px;
+}
+
+.certifications {
+	width:200px;
 }
 
 .about-us hr {
@@ -105,65 +121,101 @@ nav ul li:hover a {
     text-decoration: underline;
 }
 
-.clinic .branchmap {
-    height: 700px;
-    width: 500px;
+.services .text-center {
+	background:#007bff;
+	color:#fff;
+	margin:1rem 0rem .5rem 0rem;
+	border-radius: 3px 3px 0px 0px;
+	padding:2px;
 }
 
-.clinic .media {
-        height: 700px;
+.services .exec-list {
+	font-size:13px;
+}
+.services .text-center {
+	font-size:14px;
 }
 
-.clinic .card {
+.services #v-pills-home-service {
+	font-size:14px;
+}
+
+.clinics .branchmap {
+    width:100%;
+	height:600px;
+}
+
+.clinics .card {
     border: 0;
 }
 
-.clinic .card-header {
+.clinics .card-header {
     background: transparent !important;
     border-bottom: 0;
 }
 
-.clinic .card-body {
+.clinics .card-body {
         font-weight: bold;
 
         
     }
 
-.clinic .card-body div {
+.clinics .card-body div {
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-.clinic .card-body div label {
+.clinics .card-body div label {
     width: 150px;
 }
 
-.clinic .card-body div ul {
+.clinics .card-body div ul {
     list-style: none;
     padding-left: 0;
 }
 
-.clinic address {
+.clinics address {
     text-align: center;
     width: 100%;
 }
 
-.clinic select {
+.clinics select {
     color: #0364d9;
     font-weight: bold;
     text-align-last:center;
     text-transform: uppercase;
 }
 
-.clinic img {
+.clinics img {
     height: 40px;
     padding-bottom: 8px;
-    width: 40px;
+    width: 30px;
 }
 
-.clinic hr {
+.clinics hr {
     border-top: 2px solid #a2a2a2;
+	margin:0rem 2rem 1rem 2rem;
+}
+
+.career li {
+	font-size:14px;
+}
+
+.career .card-header {
+	font-size:14px;
+	font-weight:bold;
+}
+
+.career .btn {
+	font-size:13px;
+	font-weight:bold;
+}
+
+.career #lead {
+	font-size:13px;
+	font-weight:bold;
+	text-align:center;
 }
 
 .career .card-deck {
@@ -193,14 +245,23 @@ nav ul li:hover a {
     column-count: 2;
     list-style-position: outside;
     padding: 0;
+	margin-left:1rem;
 }
 
 .package .package-item li {
     margin-left: 1em;
+	
 }
 
 .package .text-danger {
     font-weight: bold;
+	font-size:13px;
+}
+
+.package .card-header {
+    font-weight: bold;
+	font-size:13px;
+	padding:8px;
 }
 
 .contact-us button {
@@ -211,3 +272,63 @@ nav ul li:hover a {
 .contact-us hr {
     margin: 6px 0; 
 }
+
+#logo { 
+    width:100%;
+    height:90%;
+
+}
+
+
+@media screen and (max-width: 760px) {
+  #holyweek {
+	margin-top:1rem;
+	padding-left:4rem;
+	padding-right:3rem;
+  }
+}
+
+.certificate > img {
+	width:100%;
+	height:100%
+}
+.certbtn > button {
+	background:#0246d5;
+	width:100%;
+	margin-top:.5rem;
+	color:#fff;
+	border:none;
+	padding:.5rem 0rem .5rem 0rem
+}
+
+#v-pills-tab a {
+	border-bottom:solid 1px #e6e5e6;
+	border-radius:0px;
+	font-size:13px;
+}
+
+.services #v-pills-tab a {
+	padding:9px;
+	padding-left:1rem;
+	font-size:13px;
+}
+
+.services .card-title {
+border-bottom: solid #007bff 2px
+}
+.news {
+	text-align:justify;
+	font-size:12px;
+}
+.news {
+	text-align:justify;
+	font-size:14px;
+}
+#myNavbar li {
+	border-bottom:solid 1px #fff;
+}
+
+.tests {
+	font-size:14px;
+}
+

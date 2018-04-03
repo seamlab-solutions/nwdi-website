@@ -1,0 +1,88 @@
+<div class="clinic">
+
+    <div class="row media mb-2 pt-1">
+		<div class="col-md-6 pl-5">
+        <img usemap="#branchmap" class="branchmap mr-3" src="/images/website-map.png">
+        <map name="branchmap">
+            <area shape="rect" coords="0,0,82,126" alt="Sun" onclick='document.getElementById("add").innerHTML ="#250 D.TUAZON STREET, QUEZON CITY"' style="border:solid 2px red;">
+        </map>
+		</div>
+        <div class="col-md-6 media-body">
+			<div class="card-header">
+				<select class="form-control text-center" id="select" onchange="myfunction()">
+					<option value="1" selected>D. Tuazon</option>
+					<option value="0">Malabon</option>
+					<option value="2">Baesa</option>
+					<option value="3">Manila</option>
+					<option value="4">Binondo</option>
+					<option value="5">North Edsa</option>
+					<option value="6">Makati</option>
+					<option value="7">Las Piñas</option>
+					<option value="8">Novaliches</option>
+					<option value="9">Meralco</option>
+				</select>
+			</div>
+			
+			<script>
+				function myfunction() {
+					var x = document.getElementById("select");
+					var i = x.selectedIndex;
+					document.getElementById("add").innerHTML = x.options[i].text;
+				}
+			</script>
+			
+			<div class="card-body pt-0">
+				<div>
+					<img src="/images/loc.gif" />
+					<address>
+						<a id="add"> sdsd</a>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address>
+						${selected_branch.contact_number}
+					</address>
+				</div>
+				<hr />
+				<div>
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li for.repeat="service of selected_branch.services">
+
+						</li>
+						<li>
+							Fully Automated Laboratory Exams
+						</li>
+						<li>
+							Drug Test
+						</li>
+						<li>
+							X-ray
+						</li>
+						<li>
+							Ultrasound
+						</li>
+						<li>
+							ECG
+						</li>
+						<li>
+							2D-Echo
+						</li>
+						<li>
+							Vascular studies Carotid
+						</li>
+						<li>
+							Venous
+						</li>
+						<li>
+							Arterial
+						</li>
+					</ul>
+				</div>
+				<hr />
+			</div>
+        </div>
+    </div>
+</div>
