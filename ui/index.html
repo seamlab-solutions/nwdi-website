@@ -8,13 +8,47 @@
         <link rel="stylesheet" href="index.css">
 	</head>
 	<body>
+		
         <div class="container">
-            <header class="mb-2">
-                <img src="images/logo.jpg" />
-                <img src="images/sgs-eqas.jpg" />
-            </header>
-            <nav class="mb-3">
-                <ul class="m-0 p-0">
+            <div class="row justify-content-between mt-3">
+                <div class="col-md-7">
+                        <img src="images/logo.jpg" id="logo"/>
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+                        <img src="images/sgs-eqas.jpg" id="logo"/>
+                </div>
+            </div>
+
+			
+			<!--
+			<nav class="navbar d-lg-none d-xl-none">
+				<div class="container-fluid">
+					<div class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+						<div style="width: 35px; height: 3px; background-color: #fff; margin: 4px 0; "></div>
+						<div style="width: 35px; height: 3px; background-color: #fff; margin: 4px 0;"></div>
+						<div style="width: 35px; height: 3px; background-color: #fff; margin: 4px 0;"></div>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="myNavbar">
+					  <ul class="nav navbar-nav">
+						<li class="active"><a href="home.html">Home</a></li>
+						<li><a href="about-us.html">About Us</a></li>
+						
+					  </ul>
+					 
+					</div>
+				</div>
+			</nav>
+			-->
+			
+			
+            <nav class="navbar-expand-lg mb-3 flex-column sticky-top">
+				<div class="navbar-toggler d-lg-none d-xl-none " data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="border-bottom:solid 1px #fff;">
+					<div style="width: 30px; height: 3px; background-color: #fff; margin: 4px 0; "></div>
+					<div style="width: 30px; height: 3px; background-color: #fff; margin: 4px 0;"></div>
+					<div style="width: 30px; height: 3px; background-color: #fff; margin: 4px 0;"></div>
+				</div>
+                <ul class="collapse navbar-collapse m-0 p-0 w-100 " id="myNavbar">
                     <li class="nav-item active">
                         <a class="nav-link" href="home.html">Home</a>
                     </li>
@@ -40,17 +74,29 @@
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
                     </li>
                     <li class="nav-item active">
+<<<<<<< HEAD
                         <a class="nav-link" href="online-result.html">Online Result</a>
+=======
+                        <a class="nav-link" href="#">Online Result</a>
+>>>>>>> 461c60cc4a55ba18a0299184b0b0b6fa2f922df7
                     </li>
                 </ul>
             </nav>
+			
             <div class="content">
                 Content
             </div>
-            <footer>
-                © 2017 New World Diagnostics Inc. All Rights Reserved.
-            </footer>
+			
+			<div>
+				<footer>
+					© 2017 New World Diagnostics Inc. All Rights Reserved.
+				</footer>
+			</div>
         </div>
+		
+		
+		<script src="popper.min.js"></script>
+		<script src="jquery-slim.min.js"></script>
         <script src="jquery-3.3.1.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="index.js"></script>

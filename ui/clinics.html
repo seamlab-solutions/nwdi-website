@@ -1,80 +1,424 @@
-<div class="clinic">
-    <div class="media mb-3 pt-3">
-        <img usemap="#branchmap" class="branchmap mr-3" src="/images/website-map.png">
+<div class="clinics"> 
+    <div class="row media mb-2 pt-1">
+		<div class="col-md-6 pl-5">
+        <img usemap="#branchmap" class="branchmap mr-5" src="/images/website-map.png">
         <map name="branchmap">
-            <area repeat.for="branch of branches" shape="rect" coords="${branch.coords}" click.delegate="show_branch($index)">
-        </map>
-        <div class="media-body">
-            <div class="card">
-                <div class="card-header">
-                    <select class="form-control text-center" change.delegate="select_branch($event)">
-                        <option value="1" selected>D. Tuazon</option>
-                        <option value="0">Malabon</option>
-                        <option value="2">Baesa</option>
-                        <option value="3">Manila</option>
-                        <option value="4">Binondo</option>
-                        <option value="5">North Edsa</option>
-                        <option value="6">Makati</option>
-                        <option value="7">Las Piñas</option>
-                        <option value="8">Novaliches</option>
-                        <option value="9">Meralco</option>
-                    </select>
-                </div>
-                <div class="card-body">
-                    <div>
-                        <img src="/images/address.gif" />
-                        <address>
-                            ${selected_branch.address1}<br>
-                            ${selected_branch.address2}<br>
-                            ${selected_branch.address3}
-                        </address>
-                    </div>
-                    <hr />
-                    <div>
-                        <img src="/images/contact.png" />
-                        <address>
-                            ${selected_branch.contact_number}
-                        </address>
-                    </div>
-                    <hr />
-                    <div>
-                        <img src="/images/services.jpg" />
-                        <ul class="text-center">
-                            <li for.repeat="service of selected_branch.services">
-
-                            </li>
-                            <li>
-                                Fully Automated Laboratory Exams
-                            </li>
-                            <li>
-                                Drug Test
-                            </li>
-                            <li>
-                                X-ray
-                            </li>
-                            <li>
-                                Ultrasound
-                            </li>
-                            <li>
-                                ECG
-                            </li>
-                            <li>
-                                2D-Echo
-                            </li>
-                            <li>
-                                Vascular studies Carotid
-                            </li>
-                            <li>
-                                Venous
-                            </li>
-                            <li>
-                                Arterial
-                            </li>
-                        </ul>
-                    </div>
-                    <hr />
-                </div>
-            </div>
+            <area shape="rect" coords="287,170,316,198" onclick="show_clinic(0)" alt="D. Tuazon">
+			<area shape="rect" coords="290,125,264,153" onclick="show_clinic(1)" alt="pcs">
+			<area shape="rect" coords="305,120,333,144" onclick="show_clinic(2)" alt="baesa">
+			<area shape="rect" coords="336,105,368,130" onclick="show_clinic(3)" alt="nova">
+			<area shape="rect" coords="90,118,120,145" onclick="show_clinic(4)" alt="malabon">
+			<area shape="rect" coords="155,252,183,279" onclick="show_clinic(5)" alt="ongpin">
+			<area shape="rect" coords="155,216,183,241" onclick="show_clinic(6)" alt="mirasol">
+			<area shape="rect" coords="189,216,218,241" onclick="show_clinic(6)" alt="mediscan">
+			<area shape="rect" coords="240,313,265,340" onclick="show_clinic(7)" alt="makati">
+			<area shape="rect" coords="328,252,356,279" onclick="show_clinic(8)" alt="meralco">
+			<area shape="rect" coords="148,423,174,450" onclick="show_clinic(9)" alt="las Piñas">
+		</map>
+		</div>
+        <div class="col-md-6 media-body">
+			<div class="card-header">
+				<select class="form-control text-center" onchange="show_clinic()"> 
+					<option value="0">D. Tuazon</option>
+					<option value="1">North Edsa</option>
+					<option value="2">Baesa</option>
+					<option value="3">Novaliches</option>
+					<option value="4">Malabon</option>
+					<option value="5">Binondo</option>
+					<option value="6">Manila</option>
+					<option value="7">Makati</option>
+					<option value="8">Meralco</option>
+					<option value="9">Las Piñas</option>
+				</select>
+			</div>
+			<div class="card-body pt-0 collapse show" id="dt-branch" aria-labelledby="dtuazon" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address >
+						<p id="address" class="pl-5 pr-5 mb-0">#250 D. Tuazon Street, Quezon City</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p id="telephone">(02) 790 8888</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+		<!--
+		<div id="accordion">
+		
+			<div class="card-body pt-0 collapse show" id="dt-branch" aria-labelledby="dtuazon" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address >
+						<p>#250 D.TUAZON STREET, QUEZON CITY </p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02) 790 8888 </p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			<div class="card-body pt-0 collapse" id="pcs-branch" aria-labelledby="pcs" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>G/F Philippines College of Surgeons Bldg. 992 EDSA, Quezon City</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02)426 7887</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			<div class="card-body pt-0 collapse" id="baesa-branch" aria-labelledby="baesa" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Unit 5 Olympia Commercial Plaza, 131 Quirino Highway Baesa, Quezon City</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02)330 0258</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			<div class="card-body pt-0 collapse" id="nova-branch" aria-labelledby="novaliches" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>#188 General Luis St. Brgy. Nagkaisang-Nayon Novaliches, Quezon City</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02)790-8855</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="malabon-branch" aria-labelledby="malabon" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Unit #12 Ponciana Center McArthur Highway cor. Del Monte Ave. Potrero, Malabon </p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02)330 9245</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="mirasol-branch" aria-labelledby="mirasol" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Mirasol Bldg., Apacible St. cor. Taft Ave. Manila</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02)521 0320 / (02)790 8860</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="mediscan-office" aria-labelledby="mediscan" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Mediscan Address</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>Mediscan Contact number</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="ongpin-branch" aria-labelledby="ongpin" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Units 229-231 Dasmariñas St. Binondo, Manila </p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02) 242-0641</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="meralco-branch" aria-labelledby="ortigas" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Meralco Building Ortigas, Metro Manila </p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02) 242-0641</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="makati-branch" aria-labelledby="makati" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Rm. 104 Campos Rueda Bldg., 101 Urban Ave. San Lorenzo, Makati</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02) 887-5498</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			<div class="card-body pt-0 collapse" id="lp-branch" aria-labelledby="LP" data-parent="#accordion">
+				<div>
+					<img src="/images/loc.gif" />
+					<address class="pl-4 pr-4">
+						<p>Imperial Appliance Plaza Brgy. Talon Uno Alabang-Zapote Road Las Piñas</p>
+					</address>
+				</div>
+				<hr/>
+				<div>
+					<img src="/images/contacts.gif" />
+					<address >
+						<p>(02) 790-8890</p>
+					<address >
+				</div>
+				<hr />
+				<div id="brnch-add">
+					<img src="/images/test.gif" />
+					<ul class="text-center">
+						<li>Fully Automated Laboratory Exams</li>
+						<li>Drug Test</li>
+						<li>X-ray</li>
+						<li>Ultrasound</li>
+						<li>ECG</li>
+						<li>2D-Echo</li>
+						<li>Vascular studies Carotid</li>
+						<li>Venous</li>
+						<li>Arterial</li>
+					</ul>
+				</div>
+				<hr/>
+			</div>
+			
+			
+			
+		</div>
+		-->
         </div>
     </div>
+
 </div>
