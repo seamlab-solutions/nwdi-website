@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    $(".content").load('online-result.html');
+    $(".content").load('clinics.html');
     
     $("nav > ul > li > a" ).on("click", function(e) {
         $("nav > ul > li > a" ).removeClass('active');
         $(e.target).toggleClass('active');
         $(".content").load($(e.target).attr('href'));
         return false;
-    });
+	});
 });
 
 function show_clinic(id = null) {
@@ -92,8 +92,19 @@ function show_clinic(id = null) {
 			]
 		}
 	]
-	$("#address").html(branches[(id == null ? $(event.target).val() : id)].address);
-	$("#telephone").html(branches[(id == null ? $(event.target).val() : id)].telephone);
+
+	let selected_branch = branches[(id == null ? $(event.target).val() : id)]
+	$("#address").html(selected_branch.address);
+	$("#telephone").html(selected_branch.telephone);
+
+	$("#services").empty()
+	$.each(selected_branch.services, function(index, service) {
+		var service_li = document.createElement("li")
+		$(service_li).text(service)
+        $("#services").append(service_li);
+	})
+
+	$("#branches").val((id == null ? $(event.target).val() : id))
 
 	$(".content").on('show.bs.modal', '.result-modal', function (event) {
         var modal = $(this);
