@@ -7,7 +7,6 @@ $(document).ready(function() {
         $(".content").load($(e.target).attr('href'));
         return false;
     });
-<<<<<<< HEAD
 });
 
 function show_clinic(id = null) {
@@ -95,9 +94,8 @@ function show_clinic(id = null) {
 	]
 	$("#address").html(branches[(id == null ? $(event.target).val() : id)].address);
 	$("#telephone").html(branches[(id == null ? $(event.target).val() : id)].telephone);
-=======
 
-    $(".content").on('show.bs.modal', '.result-modal', function (event) {
+	$(".content").on('show.bs.modal', '.result-modal', function (event) {
         var modal = $(this);
         modal.find('.modal-body button').prop('disabled', true);
         var button = $(event.relatedTarget);
@@ -112,7 +110,7 @@ function show_clinic(id = null) {
             }
         });
     });
-});
+}
 
 function validate() {
     $.post( "online-result", { patient_number: $("#patient_number").val() }, function( data ) {
@@ -133,7 +131,6 @@ function validate() {
     
                 $(button).html('View')
                 $(button).addClass("btn btn-sm btn-outline-primary")
-                //$(button).attr('data-id', row['refuniqueno'])
                 $(button).attr('data-trackno', row['trackno'])
                 $(button).attr('data-toggle', "modal")
                 $(button).attr('data-target', ".modal")
@@ -146,13 +143,14 @@ function validate() {
         } else {
             alert(data.status)
         }
-        
     });
 }
 
 function logout() {
     $(".e-result").toggleClass('d-none')
     $(".e-result-list").toggleClass('d-none')
-    $("#patient_result").empty()
->>>>>>> 500f6c2d869022e4cbd2a8516dd136acf18ef982
+	$("#patient_result").empty()
+	$("#patient_number").val('')
+	$("#transaction_number").val('')
+	$("#patient_number").focus()
 }
