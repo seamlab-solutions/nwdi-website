@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".content").load('clinics.html');
+    $(".content").load('online-result.html');
     
     $("nav > ul > li > a" ).on("click", function(e) {
         $("nav > ul > li > a" ).removeClass('active');
