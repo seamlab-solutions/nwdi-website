@@ -156,8 +156,11 @@ nav ul li:hover a {
 
 .clinics .card-body {
         font-weight: bold;
-
-        
+    }
+.clinics .card-body p u {
+        font-weight: normal;
+        font-size: 11px;
+        font-style: italic;
     }
 
 .clinics .card-body div {
@@ -171,8 +174,10 @@ nav ul li:hover a {
 }
 
 .clinics .card-body div ul {
-    list-style: none;
+    font-size: 12px;
     padding-left: 0;
+    text-align: center;
+   
 }
 
 .clinics address {
@@ -198,8 +203,22 @@ nav ul li:hover a {
 	margin:0rem 2rem 1rem 2rem;
 }
 
+.clinics-package-item {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style-position: outside;
+    padding: 0;
+	margin-left:1rem;
+}
+
+
+.serices-title {
+    font-size: 13px;
+}
 .career li {
-	font-size:14px;
+    font-size:14px;
+    padding-left: 0px;
 }
 
 .career .card-header {
