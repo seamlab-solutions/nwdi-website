@@ -1,31 +1,51 @@
-<div class="e-result">
-    <div class="media">
+
+<div class="row e-result">
+    <div class="col-lg-6 media mb-2">
+            <div class="jumbotron pb-0 pt-0" style="background:#fff;">
         <div class="media-body">
-            <div class="card">
+            <div class="card" style="border:none">
                 <div class="card-body">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
+                        <img src="/images/view-result.png" class="mb-4" style="width:15%; display:block; margin-left:auto; margin-right:auto;"/>
+
+                    <div class="input-group mb-3">
+                        <!-- <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-user"></i></div>
+<<<<<<< HEAD
                         </div>
                         <input type="text" class="form-control" placeholder="Patient Number" id="patient_number">
+=======
+                        </div> -->
+                        <input type="text" placeholder="Patient Number" id="patient_number" value="461138-2011">
+>>>>>>> 97666476dda1edd923a44109d9b976dc53309165
                     </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
+                    <div class="input-group mb-4">
+                        <!-- <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-unlock-alt"></i></div>
+<<<<<<< HEAD
                         </div>
                         <input type="password" class="form-control" placeholder="Transaction Number" id="transaction_number">
+=======
+                        </div> -->
+                        <input type="password" placeholder="Transaction Number" id="transaction_number" value="12345">
+>>>>>>> 97666476dda1edd923a44109d9b976dc53309165
                     </div>
-                    <button class="btn w-100" onclick="validate()">Login</button>
+                    <button class="btn w-100 p-1" onclick="validate()" id="btn-login">Login </button>
                     <p class="pt-3">
-                        <i>Note:</i>
-                        By clicking "Login" I agree that I have read the <button style="vertical-align: baseline;" type="button" class="btn btn-link p-0 m-0" data-toggle="modal" data-target=".privacy-notice-modal">Privacy Notice</button>.  
+                        <a style="font-size:13px;"><b>Note: </b>By clicking "Login" I agree that I have read the<button style="vertical-align: baseline;" type="button" class="btn btn-link p-0 m-0" data-toggle="modal" data-target=".privacy-notice-modal"> &nbsp;<i>Privacy Notice</i></button>. </a>
                     </p>
                 </div>
+            
             </div>
         </div>
-        <img class="ml-3" src="/images/official-receipt-guide.jpg" />
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+            <img class="or-img" src="/images/official-receipt-guide.jpg" />
     </div>
 </div>
+
+
 <div class="e-result-list d-none">
     <button class="btn btn-primary mb-2" onclick="logout()">Logout</button>
     <button class="btn btn-primary mb-2">Reload</button>

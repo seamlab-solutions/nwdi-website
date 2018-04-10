@@ -351,3 +351,30 @@ border-bottom: solid #007bff 2px
 	font-size:14px;
 }
 
+.or-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#transaction_number {
+    border:none;
+    border-bottom:solid 2px #116efb;
+    border-radius:0px;
+    text-align:center; 
+    width:100%;
+    font-size:12px;
+}
+
+#patient_number {
+    border:none;
+    border-bottom:solid 2px #116efb;
+    border-radius:0px;
+    text-align:center; 
+    width:100%;
+    font-size:12px;
+}
+#btn-login {
+    background:#116efb;
+    color:#fff;
+}
