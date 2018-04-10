@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".content").load('online-result.html');
+    $(".content").load('home.html');
     
     $("nav > ul > li > a" ).on("click", function(e) {
         $("nav > ul > li > a" ).removeClass('active');
@@ -9,7 +9,8 @@ $(document).ready(function() {
 	});
 });
 
-function show_clinic(id = null) {
+function show_clinic(id) {
+	var id = id || null
 	branches = [
 		{ 
 			address: '#250 D. Tuazon Street, Quezon City', 
@@ -223,8 +224,8 @@ function show_clinic(id = null) {
 			]
 		},
 		{ 
-			address: 'Unit 12 Ponciana Center McArthur Highway cor. Del Monte Ave. Potrero, Malabon', 
-			telephone: '(02)330 9245 ',
+			address: 'Unit 101 and 102 Mezzanine Floor Panco Square Bldg. 67 Mc Arthur Highway Potrero Malabon', 
+			telephone: '(02)330 9245',
 			services: [
 				[
 					'COMPLETE LABORATORY TESTS'
@@ -271,8 +272,8 @@ function show_clinic(id = null) {
 			]
 		},
 		{ 
-			address: 'Units 229-231 Dasmariñas St. Binondo, Manila', 
-			telephone: '(02)242 0641 ',
+			address: 'Mezzanine Floor. Strata Gold Condominium 738 Ongpin Street Brgy. 296, Binondo', 
+			telephone: '(02)251-4433',
 			services: [
 				[
 					'COMPLETE LABORATORY TESTS'
@@ -595,7 +596,7 @@ function show_clinic(id = null) {
 }
 
 function validate() {
-    $.post( "online-result", { patient_number: $("#patient_number").val() }, function( data ) {
+    $.post( "online-result", { patient_number: $("#patient_number").val(), transaction_number: $("#transaction_number").val() }, function( data ) {
         if(data.length) {
             $(".e-result").toggleClass('d-none')
             $(".e-result-list").toggleClass('d-none')

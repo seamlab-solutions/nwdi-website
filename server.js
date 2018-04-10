@@ -13,9 +13,17 @@ app.post('/online-result', function (req, res) {
 
     DB.execute("SELECT dcno FROM datacenter WHERE abbrev IN (';" + patient_number.replace('-', '=') + "?', '" + patient_number + "')").then(rows => {
         if(rows.length) {
-            DB.execute("SELECT CAST(rendate AS DATE) AS TransactionDate, resultcateg AS ResultCategory, trackno FROM patitem WHERE pattranno = '' dcno = '" + rows[0].dcno + "' AND resultcateg <> '(NONE)' GROUP BY rendate, resultcateg, trackno").then(rows => {
+            DB.execute("SELECT * FROM patinv WHERE dcno = '" + rows[0].dcno + "' AND pattranno='" + req.body.transaction_number + "'").then(rows => {
                 if(rows.length) {
-                    res.json(rows)
+                    DB.execute("SELECT CAST(rendate AS DATE) AS TransactionDate, resultcateg AS ResultCategory, trackno FROM patitem WHERE dcno = '" + rows[0].dcno + "' AND resultcateg <> '(NONE)' GROUP BY rendate, resultcateg, trackno").then(rows => {
+                        if(rows.length) {
+                            res.json(rows)
+                        } else {
+                            res.json({status: 'Invalid Login'})
+                        }
+                    })
+                } else {
+                    res.json({status: 'Invalid Login'})
                 }
             })
         } else {
@@ -40,7 +48,8 @@ var options = {
     pfx: fs.readFileSync('./nwdi.pfx'),
     passphrase: 'P@sst0SSL'
 };
-
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
+/*
 var listener = https.createServer(options, app).listen(443, function () {
     console.log('Express HTTPS server listening on port ' + listener.address().port);
 })
@@ -49,3 +58,4 @@ http.createServer(function (req, res) {
     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
     res.end();
 }).listen(80);
+*/
