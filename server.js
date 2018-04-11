@@ -48,8 +48,8 @@ var options = {
     pfx: fs.readFileSync('./nwdi.pfx'),
     passphrase: 'P@sst0SSL'
 };
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
-/*
+
+
 var listener = https.createServer(options, app).listen(443, function () {
     console.log('Express HTTPS server listening on port ' + listener.address().port);
 })
@@ -58,4 +58,3 @@ http.createServer(function (req, res) {
     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
     res.end();
 }).listen(80);
-*/
