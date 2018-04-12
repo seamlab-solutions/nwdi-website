@@ -378,3 +378,9 @@ border-bottom: solid #007bff 2px
     background:#116efb;
     color:#fff;
 }
+
+@media only screen and (max-width:750px) {
+    .card-img-top {
+        padding-left: 1rem; 
+    }
+}
